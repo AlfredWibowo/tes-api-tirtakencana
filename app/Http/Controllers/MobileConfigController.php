@@ -19,13 +19,13 @@ class MobileConfigController extends Controller
                 'success' => true,
                 'code' => 200,
                 'data' => $mobileConfigs
-            ]);
+            ], 200);
         } catch (Exception $e) {
             return response()->json([
                 'success' => false,
                 'code' => 500,
                 'message' => $e->getMessage()
-            ]);
+            ], 500);
         }
     }
 

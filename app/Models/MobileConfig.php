@@ -10,10 +10,13 @@ class MobileConfig extends Model
 {
     use HasFactory;
 
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
+    // public function __construct(array $attributes = [])
+    // {
+    //     parent::__construct($attributes);
 
-        $this->table = DB::raw('`dbo.mobileconfig`');
-    }
+    //     $this->table = DB::raw('`dbo.mobileconfig`');
+    // }
+
+    protected $table = 'mobileconfig';
+    public $timestamps = false;
 }

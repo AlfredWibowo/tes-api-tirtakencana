@@ -10,10 +10,18 @@ class CustomerTTHDetail extends Model
 {
     use HasFactory;
 
-    public function __construct(array $attributes = [])
-    {
-        parent::__construct($attributes);
+    // public function __construct(array $attributes = [])
+    // {
+    //     parent::__construct($attributes);
 
-        $this->table = DB::raw('`dbo.customertthdetail`');
+    //     $this->table = DB::raw('`dbo.customertthdetail`');
+    // }
+
+    protected $table = 'customertthdetail';
+    public $timestamps = false;
+
+    public function customerTTH()
+    {
+        return $this->belongsTo(CustomerTTH::class, 'TTOTTPNo', 'TTOTTPNo');
     }
 }
